@@ -1,1 +1,0 @@
-uso de shadcn/ui
