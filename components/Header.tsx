@@ -1,9 +1,13 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import Navigation from "./Navigation"
 
-type Props = {};
 
-const Header = (props: Props) => {
+type Props = {
+  activeItem: number
+};
+
+const Header = ({activeItem}: Props) => {
   const [active, setactive] = useState(false);
 
   // Evento de desplazamiento de la ventana (scroll)
@@ -27,10 +31,14 @@ const Header = (props: Props) => {
         <div>
           <Link href={"/"}>
             <h1 className="text-3xl font-Inter cursor-pointer">
-                <span className="text-[#64ff4c]">Prompt</span>Palette
+                <span className="text-[#ffb13d]">Prompt</span>Palette
             </h1>
           </Link>
         </div>
+        <div className="flex">
+          <Navigation activeItem={activeItem}/>
+        </div>
+        <div className="flex items-center ml-10"></div>
       </div>
     </div>
   );

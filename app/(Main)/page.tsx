@@ -4,12 +4,12 @@ import Header from '@/components/Header'
 
 type Props = {}
 
-const page = (props: Props) => {
+const Page = (props: Props) => {
   return (
     <div>
-      <Header/>
+      <Header activeItem={0}/>
     </div>
   )
 }
 
-export default page
+export default Page
