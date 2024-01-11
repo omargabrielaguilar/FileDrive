@@ -1,13 +1,13 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import Navigation from "./Navigation"
-
+import Navigation from "./Navigation";
+import {AiOutlineSearch} from 'react-icons/ai';
 
 type Props = {
-  activeItem: number
+  activeItem: number;
 };
 
-const Header = ({activeItem}: Props) => {
+const Header = ({ activeItem }: Props) => {
   const [active, setactive] = useState(false);
 
   // Evento de desplazamiento de la ventana (scroll)
@@ -31,14 +31,16 @@ const Header = ({activeItem}: Props) => {
         <div>
           <Link href={"/"}>
             <h1 className="text-3xl font-Inter cursor-pointer">
-                <span className="text-[#ffb13d]">Prompt</span>Palette
+              <span className="text-[#ffb13d]">Prompt</span>Palette
             </h1>
           </Link>
         </div>
         <div className="flex">
-          <Navigation activeItem={activeItem}/>
+          <Navigation activeItem={activeItem} />
         </div>
-        <div className="flex items-center ml-10"></div>
+        <div className="flex items-center ml-10">
+          <AiOutlineSearch className="text-[25px] mr-5 cursor-pointer"/>
+        </div>
       </div>
     </div>
   );
